@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30320.27
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomList", "CustomList.csproj", "{181B0252-C8A5-419A-967B-2A57199AB990}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomList", "MyCustomList\CustomList.csproj", "{181B0252-C8A5-419A-967B-2A57199AB990}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTest_TestAddFunction", "..\UnitTest_TestAddFunction\UnitTest_TestAddFunction.csproj", "{95E5DF0A-8C6E-4FAD-A0D8-4ACDB297FAA1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTest_TestAddFunction", "UnitTest_TestAddFunction\UnitTest_TestAddFunction.csproj", "{95E5DF0A-8C6E-4FAD-A0D8-4ACDB297FAA1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -8,6 +8,10 @@ namespace CustomList
 {
     public class CustomList<T>
     {
+        public CustomList()
+        {
+
+        }
 
 
         public void Add()

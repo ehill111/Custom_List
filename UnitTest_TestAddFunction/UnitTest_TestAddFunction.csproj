@@ -56,7 +56,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CustomList\CustomList.csproj">
+    <ProjectReference Include="..\MyCustomList\CustomList.csproj">
       <Project>{181b0252-c8a5-419a-967b-2a57199ab990}</Project>
       <Name>CustomList</Name>
     </ProjectReference>
