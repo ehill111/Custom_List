@@ -62,7 +62,7 @@ namespace UnitTest_TestAddFunction
         }
 
         [TestMethod]
-        public void Add_AddFiveValues_DoesCapacityDouble() //Check doubling function of capacity.
+        public void Add_AddFiveValues_CapacityDoubles_4To8() //Check doubling function of capacity.
         {
             //Arrange
             //Instantiate, create variables, include expected and actual
@@ -82,7 +82,7 @@ namespace UnitTest_TestAddFunction
             customList.Add(value4);
             customList.Add(value5);
 
-            actualValue = customList.Capacity;//The fifth value should make capacity go from 4 to 8.
+            actualValue = customList.Capacity;//The fifth value should make capacity go from 4 to 8. This is assuming the system makes an array of 4 the moment the first item is added to the list irrespective of it being instanced yet. If instantiation is necessary prior to giving array size, then array size would go from the default of zero directly to eight once the default reaches its max (or perhaps when the fifth item is input?).
 
             //Assert
             Assert.AreEqual(expectedValue, actualValue);
@@ -94,8 +94,8 @@ namespace UnitTest_TestAddFunction
             //Arrange
             //Instantiate, create variables, include expected and actual
             CustomList<string> customList = new CustomList<string>();
-            string value1 = ("String Output");
-            string expectedValue = ("String Output");
+            string value1 = ("Dog");
+            string expectedValue = ("Dog");
             string actualValue;
 
             //Act
@@ -107,13 +107,13 @@ namespace UnitTest_TestAddFunction
         }
 
         [TestMethod]
-        public void Add_CheckToSeeIfNull()//Check null value of add.
+        public void Add_CheckEmptyIndex_IndexEqualsNull()//Check null value of add.
         {   //Arrange
             //Instantiate, create variables, include expected and actual
             CustomList<string> customList = new CustomList<string>();
-            string value1 = ("Not Null Value");
-            string value2 = ("Not Null Value");
-            string value3 = ("Not Null Value");
+            string value1 = ("Dog");
+            string value2 = ("Dog");
+            string value3 = ("Dog");
             string expectedValue = null;
             string actualValue;
 
@@ -128,7 +128,7 @@ namespace UnitTest_TestAddFunction
         }
                                 //BELOW ARE THE REMOVE TESTS
         [TestMethod]
-        public void Remove_ItemFromList()
+        public void Remove_SingleItemFromList_DecrementOfItem()
         {
             //Arrange
             //Instantiate, create variables, include expected and actual
@@ -155,7 +155,7 @@ namespace UnitTest_TestAddFunction
         }
 
         [TestMethod]
-        public void Remove_ItemFromListByIndex()
+        public void Remove_SingleItemByIndex_CountOf4()
         {
             //Arrange
             //Instantiate, create variables, include expected and actual
@@ -182,7 +182,7 @@ namespace UnitTest_TestAddFunction
         }
 
         [TestMethod]
-        public void Remove_CheckCountAfterRemoval()
+        public void Remove_RemoveOneValue_CountOf4()
         {
             //Arrange
             //Instantiate, create variables, include expected and actual
@@ -208,7 +208,7 @@ namespace UnitTest_TestAddFunction
         }
 
         [TestMethod]
-        public void Remove_CheckCapacityAfterRemoval()
+        public void Remove_RemoveOneValue_CapacityOf8()
         {
             //Arrange
             //Instantiate, create variables, include expected and actual
@@ -237,12 +237,12 @@ namespace UnitTest_TestAddFunction
             actual = customList.Capacity;
 
             //Assert
-            string expected = 8;
-            string actual;//Capacity would have decreased from 16.
+            int expected = 8;
+            int actual;//Capacity would have decreased from 16.
         }
 
         [TestMethod]
-        public void Remove_RemoveMultipleObjects()
+        public void Remove_RemoveFourValues_CountOf5()
         {
             //Arrange
             //Instantiate, create variables, include expected and actual
