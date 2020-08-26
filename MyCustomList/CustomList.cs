@@ -14,7 +14,7 @@ namespace CustomList
         }
 
 
-        public void Add()
+        public void Add(T item)
         {
 
         }

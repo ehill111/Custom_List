@@ -1,10 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using CustomList;
-using System.Collections.Generic;
-using System.Security.Cryptography.X509Certificates;
-
-namespace UnitTest_TestAddFunction
+namespace CustomListTest
 {
     [TestClass]
     public class CustomListAddFunctionTest
@@ -22,7 +19,7 @@ namespace UnitTest_TestAddFunction
             int value5 = 5;
             int expected = 5;
             int actual;
-            
+
 
             //Act
             customList.Add(value1);
@@ -122,11 +119,11 @@ namespace UnitTest_TestAddFunction
             customList.Add(value2);
             customList.Add(value3);
             actualValue = customList[3];
-            
+
             //Assert
             Assert.IsNull(expectedValue, actualValue);
         }
-                                //BELOW ARE THE REMOVE TESTS
+        //BELOW ARE THE REMOVE TESTS
         [TestMethod]
         public void Remove_SingleItemFromList_DecrementOfItem()
         {
@@ -176,7 +173,7 @@ namespace UnitTest_TestAddFunction
             customList.Add(value5);
             customList.RemoveAt(3);
             actual = customList.Count;
-             
+
             //Assert
             Assert.AreEqual(expected, actual);
         }
@@ -192,7 +189,7 @@ namespace UnitTest_TestAddFunction
             int value3;
             int value4;
             int value5;
-            
+
             //Act
             customList.Add(value1);
             customList.Add(value2);
@@ -279,11 +276,4 @@ namespace UnitTest_TestAddFunction
         }
 
     }
-
-
-
-
-
-
 }
-
