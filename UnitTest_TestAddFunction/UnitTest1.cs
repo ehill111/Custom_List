@@ -241,6 +241,43 @@ namespace UnitTest_TestAddFunction
             string actual;//Capacity would have decreased from 16.
         }
 
+        [TestMethod]
+        public void Remove_RemoveMultipleObjects()
+        {
+            //Arrange
+            //Instantiate, create variables, include expected and actual
+            CustomList<int> customList = new CustomList<int>();
+            int value1;
+            int value2;
+            int value3;
+            int value4;
+            int value5;
+            int value6;
+            int value7;
+            int value8;
+            int value9;
+
+            //Act
+            customList.Add(value1);
+            customList.Add(value2);
+            customList.Add(value3);
+            customList.Add(value4);
+            customList.Add(value5);
+            customList.Add(value6);
+            customList.Add(value7);
+            customList.Add(value8);
+            customList.Add(value9);
+            customList.Remove(value1);
+            customList.Remove(value2);
+            customList.Remove(value3);
+            customList.Remove(value4);
+            actual = customList.Count;
+
+            //Assert
+            string expected = 5;
+            string actual;
+        }
+
     }
 
 
