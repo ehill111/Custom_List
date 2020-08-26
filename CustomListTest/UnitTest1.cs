@@ -1,6 +1,8 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using CustomList;
+using System.CodeDom;
+
 namespace CustomListTest
 {
     [TestClass]
@@ -59,7 +61,7 @@ namespace CustomListTest
         }
 
         [TestMethod]
-        public void Add_AddFiveValues_CapacityDoubles_4To8() //Check doubling function of capacity.
+        public void Add_AddFiveValues_CapacityDoubles4To8() //Check doubling function of capacity.
         {
             //Arrange
             //Instantiate, create variables, include expected and actual
@@ -104,24 +106,25 @@ namespace CustomListTest
         }
 
         [TestMethod]
-        public void Add_CheckEmptyIndex_IndexEqualsNull()//Check null value of add.
+        [ExpectedException(typeof(ArgumentOutOfRangeException))]
+        public void Add_CheckIndexOutOfRange_ExceptionThrown() //Wow. This opens a whole new area of testing.
         {   //Arrange
             //Instantiate, create variables, include expected and actual
             CustomList<string> customList = new CustomList<string>();
             string value1 = ("Dog");
             string value2 = ("Dog");
             string value3 = ("Dog");
-            string expectedValue = null;//I thought null would produce true or false. MS documentation said it would produce a string.
-            string actualValue;
+            string expectedResult = ArgumentOutOfRange;//I thought null would produce true or false. MS documentation said it would produce a string.
+            string actualResult;
 
             //Act
             customList.Add(value1);
             customList.Add(value2);
             customList.Add(value3);
-            actualValue = customList[3];
+            actualResult = customList[3];
 
             //Assert
-            Assert.IsNull(expectedValue, actualValue);
+            Assert.ArgumentOutOfRange(expectedResult, actualResult);
         }
         //BELOW ARE THE REMOVE TESTS
         [TestMethod]
@@ -152,7 +155,7 @@ namespace CustomListTest
         }
 
         [TestMethod]
-        public void Remove_SingleItemByIndex_CountOf4()
+        public void Remove_SingleValue_CountOf4()
         {
             //Arrange
             //Instantiate, create variables, include expected and actual
@@ -171,7 +174,7 @@ namespace CustomListTest
             customList.Add(value3);
             customList.Add(value4);
             customList.Add(value5);
-            customList.RemoveAt(3);
+            customList.Remove(value1);
             actual = customList.Count;
 
             //Assert
