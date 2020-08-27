@@ -10,16 +10,7 @@ namespace CustomList
     {
         static void Main(string[] args)
         {
-            List<int> testList = new List<int>();
-            testList.Add(3);
-            testList.Add(3);
-            testList.Add(3);
-            testList.Add(3);
-            testList.Add(3);
-            testList.Add(3);
-            testList.Add(3);
-            testList.Add(3);
-            testList.Add(3);
+            
             
         }
        

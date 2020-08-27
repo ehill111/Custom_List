@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace CustomList
 {
-    public class CustomList<T>//"...I want to use a custom-built list class that stores its values..."
+    public class CustomList<T>//"I want to use a custom-built list class that stores its values..."
     {   //Member variables have/has a/an...
-        CustomList<T> _customList;
+        
+        private T[] _items = new T[5];
         private int _count;
         private int _capacity;
-        public T _dog;
-
+        
         //Properties
-        public int _Count//"...I want a Count property...so that I can get a count..."
+        public int _Count//"I want a Count property...so that I can get a count..."
         {
             get
             {
@@ -22,32 +22,51 @@ namespace CustomList
             }
         }
 
-        public int _Capacity//"...I want a Capacity property...so that I can publicly see..."
+        public int _Capacity//"I want a Capacity property...so that I can publicly see..."
         {
             get
             {
                 return _capacity;
             }
+            
         }
 
-        public void CreateCustomList()
+        public T this[int i]//"I want to create a C# indexer..."
         {
-            //Methods do something.
-            _customList = new CustomList<T>();
-            _customList.Add(_dog);//Check on usage of T
-            _customList.Add(_dog);
-            _customList.Add(_dog);
-            _customList.Add(_dog);
-            _customList.Add(_dog);
+            get { return _items[i]; }
+            set { _items[i] = value; }
         }
 
+        //public void CreateCustomList()
+        //{
+        //    _items[0] = _dog;
+        //    _items[1] = _dog;
+        //    //Methods do something.
+         
+        //}
       
-
-
-
         public void Add(T item)
         {
+           
+            if(_count == _capacity)
+            {
+                //create new temporary array
+                T[] tempArray = new T[_capacity];
+                //move _items' Values to temp
+                for (int i = 0; i < length; i++)
+                {
+                    tempArray = _items;
+                }
+                //make _items bigger
+                _items = new T[16];
+                //move values back to items
+                for (int i = 0; i < length; i++)
+                {
 
+                }
+            }
+            _items[_count] = item;
+            _count++;
         }
 
         public void Remove()
